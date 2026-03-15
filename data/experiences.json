@@ -202,5 +202,22 @@
     "difficulty": "Easy–Moderate",
     "season": "Jun – Oct",
     "altitude": "~4,000m"
+  },
+  {
+    "id": 13,
+    "category": "culture",
+    "filterTag": "culture",
+    "badge": "Night Sky",
+    "meta": "Every Evening · Included",
+    "title": "Under the Bhaga Sky — Stargazing at Jispa",
+    "excerpt": "At 3,200m, there are no streetlights between you and the Milky Way. Bortle Class 1–2 skies, the galactic core with the naked eye, and the Perseid meteor shower in August.",
+    "image": "assets/images/IMG_3229.webp",
+    "link": "experience-stargazing.html",
+    "featured": false,
+    "wide": false,
+    "duration": "Every Evening",
+    "difficulty": "None",
+    "season": "May – Nov",
+    "altitude": "3,200m"
   }
 ]
