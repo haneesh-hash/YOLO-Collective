@@ -1,0 +1,1053 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/svg+xml" href="logo.svg?v=1771706725" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Contact Us | The YOLO Collective</title>
+    <meta name="description"
+        content="Get in touch with The YOLO Collective. Reach us via phone, WhatsApp, email, or drop us a message for bookings, partnerships, and inquiries." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Contact Us | The YOLO Collective" />
+    <meta property="og:description" content="Get in touch with The YOLO Collective for bookings, partnerships, and inquiries." />
+    <meta property="og:image" content="https://theyolocollective.com/assets/images/IMG_3229.webp" />
+    <meta property="og:url" content="https://theyolocollective.com/contact.html" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="style.css?v=5" />
+    <link rel="canonical" href="https://theyolocollective.com/contact.html" />
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+    <style>
+        /* ═══════════════════════════════════════════
+           CONTACT PAGE — Fun, Interactive, Playful
+           ═══════════════════════════════════════════ */
+
+        /* ── Animated blob background ── */
+        .contact-hero {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+            position: relative;
+            overflow: hidden;
+            padding: 8rem 2rem 4rem;
+        }
+
+        .blob-container {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: blobFloat 8s ease-in-out infinite;
+        }
+
+        .blob--1 {
+            width: 400px;
+            height: 400px;
+            background: #74ACDF;
+            top: -100px;
+            right: -50px;
+            animation-delay: 0s;
+        }
+
+        .blob--2 {
+            width: 300px;
+            height: 300px;
+            background: rgba(116,172,223,0.6);
+            bottom: -80px;
+            left: -60px;
+            animation-delay: -3s;
+        }
+
+        .blob--3 {
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.3);
+            top: 50%;
+            left: 50%;
+            animation-delay: -5s;
+        }
+
+        @keyframes blobFloat {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+        }
+
+        .contact-hero__content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-hero__emoji {
+            font-size: 4rem;
+            display: block;
+            margin-bottom: 1.5rem;
+            transform-origin: 70% 70%;
+            animation: emojiEntrance 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both,
+                       wave 2.5s ease-in-out 1s infinite;
+        }
+
+        @keyframes emojiEntrance {
+            0% { opacity: 0; transform: scale(0) rotate(-180deg); }
+            100% { opacity: 1; transform: scale(1) rotate(0deg); }
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg); }
+            10% { transform: rotate(14deg); }
+            20% { transform: rotate(-8deg); }
+            30% { transform: rotate(14deg); }
+            40% { transform: rotate(-4deg); }
+            50% { transform: rotate(10deg); }
+            60%, 100% { transform: rotate(0deg); }
+        }
+
+        .contact-hero__title {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 300;
+            font-size: clamp(2.5rem, 7vw, 5.5rem);
+            color: #fff;
+            line-height: 1.05;
+            margin: 0;
+            animation: slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.5s both;
+        }
+
+        .contact-hero__title span {
+            display: inline-block;
+            color: #74ACDF;
+        }
+
+        .contact-hero__subtitle {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            color: rgba(255,255,255,0.5);
+            margin-top: 1.25rem;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: slideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.8s both;
+        }
+
+        @keyframes slideUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .contact-hero__subtitle .typed-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1.2em;
+            background: #74ACDF;
+            margin-left: 2px;
+            vertical-align: text-bottom;
+            animation: cursorBlink 1s step-end infinite;
+        }
+
+        @keyframes cursorBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* ── Quick Connect Pills ── */
+        .quick-connect {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2.5rem;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.7rem 1.4rem;
+            border-radius: 100px;
+            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(255,255,255,0.04);
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 0.88rem;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1) both;
+        }
+
+        .pill:nth-child(1) { animation-delay: 1s; }
+        .pill:nth-child(2) { animation-delay: 1.1s; }
+        .pill:nth-child(3) { animation-delay: 1.2s; }
+        .pill:nth-child(4) { animation-delay: 1.3s; }
+
+        .pill:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(116,172,223,0.2);
+            border-color: rgba(116,172,223,0.4);
+            background: rgba(116,172,223,0.1);
+        }
+
+        .pill:active {
+            transform: translateY(0) scale(0.97);
+        }
+
+        .pill svg {
+            width: 18px;
+            height: 18px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .pill--whatsapp:hover {
+            border-color: rgba(37,211,102,0.5);
+            background: rgba(37,211,102,0.1);
+            box-shadow: 0 10px 40px rgba(37,211,102,0.15);
+        }
+
+        .pill--instagram:hover {
+            border-color: rgba(225,48,108,0.5);
+            background: rgba(225,48,108,0.08);
+            box-shadow: 0 10px 40px rgba(225,48,108,0.15);
+        }
+
+        .pill--email:hover {
+            border-color: rgba(116,172,223,0.5);
+            background: rgba(116,172,223,0.1);
+            box-shadow: 0 10px 40px rgba(116,172,223,0.15);
+        }
+
+        /* ── Main Content ── */
+        .contact-main {
+            background: #000;
+            padding: 2rem 2rem 6rem;
+        }
+
+        .contact-wrapper {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* ── Section label ── */
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.35);
+            margin-bottom: 2rem;
+        }
+
+        .section-tag::before {
+            content: '';
+            width: 24px;
+            height: 1px;
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* ── Fun Card Form ── */
+        .form-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 24px;
+            padding: clamp(2rem, 5vw, 3rem);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #74ACDF, #fff, #74ACDF);
+            background-size: 200% 100%;
+            animation: gradientSlide 3s linear infinite;
+        }
+
+        @keyframes gradientSlide {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 300% 0%; }
+        }
+
+        .form-card__header {
+            margin-bottom: 2.5rem;
+        }
+
+        .form-card__header h2 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 300;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            color: #fff;
+            margin: 0 0 0.4rem;
+        }
+
+        .form-card__header p {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.4);
+            margin: 0;
+        }
+
+        /* ── Stepped form fields ── */
+        .form-step {
+            display: block !important;
+            margin-bottom: 2rem;
+            position: relative;
+            animation: none !important;
+        }
+
+        .form-step__number {
+            position: absolute;
+            left: 0;
+            top: 0.85rem;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(255,255,255,0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .form-step:focus-within .form-step__number {
+            border-color: #74ACDF;
+            color: #74ACDF;
+            background: rgba(116,172,223,0.1);
+            transform: scale(1.1);
+        }
+
+        .form-step.filled .form-step__number {
+            border-color: #74ACDF;
+            color: #74ACDF;
+            background: rgba(116,172,223,0.1);
+        }
+
+        .form-step__input-wrap {
+            margin-left: 44px;
+        }
+
+        .form-step input,
+        .form-step textarea {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1.5px solid rgba(255,255,255,0.1);
+            padding: 0.85rem 0;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 1rem;
+            color: #fff;
+            outline: none;
+            transition: border-color 0.3s;
+            box-sizing: border-box;
+            resize: none;
+        }
+
+        .form-step textarea {
+            min-height: 80px;
+        }
+
+        .form-step input::placeholder,
+        .form-step textarea::placeholder {
+            color: rgba(255,255,255,0.25);
+            font-weight: 300;
+        }
+
+        .form-step input:focus,
+        .form-step textarea:focus {
+            border-color: #74ACDF;
+        }
+
+        .form-step.filled input,
+        .form-step.filled textarea {
+            border-color: rgba(116,172,223,0.3);
+        }
+
+        .form-step__label {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.6);
+            letter-spacing: 0.02em;
+            margin-bottom: 0.25rem;
+            display: block;
+        }
+
+        /* ── Submit button with animation ── */
+        .form-submit-wrap {
+            margin-left: 44px;
+            margin-top: 0.5rem;
+        }
+
+        .form-submit {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: #fff;
+            color: #000;
+            border: none;
+            padding: 1rem 2.5rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.03em;
+            border-radius: 60px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-submit:hover {
+            background: #74ACDF;
+            color: #000;
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(116,172,223,0.3);
+        }
+
+        .form-submit:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        .form-submit__text,
+        .form-submit svg {
+            position: relative;
+            z-index: 1;
+        }
+
+        .form-submit svg {
+            width: 18px;
+            height: 18px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: transform 0.3s;
+        }
+
+        .form-submit:hover svg {
+            transform: translateX(4px) rotate(-45deg);
+        }
+
+        /* ── Progress bar ── */
+        .form-progress {
+            display: flex;
+            gap: 6px;
+            margin-left: 44px;
+            margin-bottom: 2rem;
+        }
+
+        .form-progress__bar {
+            height: 3px;
+            flex: 1;
+            border-radius: 3px;
+            background: rgba(255,255,255,0.08);
+            overflow: hidden;
+            transition: all 0.4s;
+        }
+
+        .form-progress__bar.active {
+            background: #74ACDF;
+        }
+
+        /* ── Success state ── */
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        .form-success.active {
+            display: block;
+            animation: successPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes successPop {
+            0% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .form-success__emoji {
+            font-size: 4rem;
+            display: block;
+            margin-bottom: 1rem;
+            animation: celebrateEmoji 0.6s ease-out;
+        }
+
+        @keyframes celebrateEmoji {
+            0% { transform: scale(0) rotate(-180deg); }
+            100% { transform: scale(1) rotate(0); }
+        }
+
+        .form-success h3 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 300;
+            font-size: 1.8rem;
+            color: #fff;
+            margin: 0 0 0.5rem;
+        }
+
+        .form-success p {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.5);
+            margin: 0;
+        }
+
+        /* Loading state */
+        .form-submit.loading {
+            pointer-events: none;
+        }
+
+        .form-submit.loading .form-submit__text {
+            opacity: 0;
+        }
+
+        .form-submit.loading svg {
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* ── Confetti canvas ── */
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .contact-hero {
+                min-height: 55vh;
+                padding: 7rem 1.5rem 3rem;
+            }
+
+            .contact-main {
+                padding: 2rem 1rem 4rem;
+            }
+
+            .form-card {
+                padding: 1.5rem;
+                border-radius: 18px;
+            }
+
+            .quick-connect {
+                gap: 0.6rem;
+            }
+
+            .pill {
+                padding: 0.6rem 1rem;
+                font-size: 0.82rem;
+            }
+
+            .blob--1 { width: 250px; height: 250px; }
+            .blob--2 { width: 200px; height: 200px; }
+            .blob--3 { width: 150px; height: 150px; }
+        }
+
+        /* ── Stagger animation ── */
+        .animate-in {
+            animation: slideUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) both;
+        }
+
+        .section-tag.animate-in { animation-delay: 0.1s; }
+        .form-card.animate-in { animation-delay: 0.3s; }
+    </style>
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <!-- Header -->
+    <header class="site-header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo.svg?v=1771706725" alt="The YOLO Collective logo" class="logo-image" />
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#explore">Destinations <span class="arrow-down">&#9660;</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="jispa.html">Jispa</a></li>
+                        <li><a href="manali.html">Manali</a></li>
+                        <li><a href="kasol.html">Kasol</a></li>
+                    </ul>
+                </li>
+                <li><a href="experience.html">YOLO Experiences</a></li>
+                <li><a href="blog.html">Blogs</a></li>
+                <li class="dropdown">
+                    <a href="#company">Inside YOLO <span class="arrow-down">&#9660;</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="franchise.html">Franchise</a></li>
+                        <li><a href="work-with-us.html">Work With Us</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="nav-right">
+                <div class="nav-actions">
+                    <a href="https://wa.me/917018591758" class="btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                        </svg>
+                    </a>
+                    <a href="#" class="btn-primary" id="booking-trigger">Book Your Stay</a>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Open Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Nav Drawer -->
+    <div class="mobile-nav-drawer" role="dialog" aria-label="Mobile navigation">
+        <ul class="mobile-nav-links">
+            <li><a href="experience.html">YOLO Experiences</a></li>
+            <li>
+                <a href="#" class="mobile-dropdown-toggle">Destinations &#9660;</a>
+                <ul class="mobile-sub-menu">
+                    <li><a href="jispa.html">Jispa</a></li>
+                    <li><a href="manali.html">Manali</a></li>
+                    <li><a href="kasol.html">Kasol</a></li>
+                </ul>
+            </li>
+            <li><a href="blog.html">Blogs</a></li>
+            <li>
+                <a href="#" class="mobile-dropdown-toggle">Inside YOLO &#9660;</a>
+                <ul class="mobile-sub-menu">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="franchise.html">Franchise</a></li>
+                    <li><a href="work-with-us.html">Work with us</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="btn-primary" id="booking-trigger-mobile">Book Your Stay</a></li>
+        </ul>
+    </div>
+
+    <!-- Mobile Bottom Nav -->
+    <nav class="mobile-bottom-nav">
+        <a href="index.html" class="nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <span>Home</span>
+        </a>
+        <a href="experience.html" class="nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            <span>Experiences</span>
+        </a>
+        <a href="#" class="nav-item highlight" id="booking-trigger-bottom">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <span>Book</span>
+        </a>
+        <a href="https://wa.me/917018591758" class="nav-item" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+            </svg>
+            <span>Chat</span>
+        </a>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════
+         HERO — Fun & Interactive
+         ═══════════════════════════════════════════ -->
+    <section class="contact-hero" id="main-content">
+        <div class="blob-container">
+            <div class="blob blob--1"></div>
+            <div class="blob blob--2"></div>
+            <div class="blob blob--3"></div>
+        </div>
+
+        <div class="contact-hero__content">
+            <span class="contact-hero__emoji" aria-hidden="true">&#128075;</span>
+            <h1 class="contact-hero__title">Say <span>Hello</span></h1>
+            <p class="contact-hero__subtitle">
+                <span id="typed-text"></span><span class="typed-cursor"></span>
+            </p>
+
+            <!-- Quick connect pills -->
+            <div class="quick-connect">
+                <a href="tel:+917018591758" class="pill">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    Call Us
+                </a>
+                <a href="https://wa.me/917018591758" target="_blank" rel="noopener noreferrer" class="pill pill--whatsapp">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                    WhatsApp
+                </a>
+                <a href="mailto:hello@theyolocollective.com" class="pill pill--email">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    Email
+                </a>
+                <a href="https://www.instagram.com/the.yolo.collective" target="_blank" rel="noopener noreferrer" class="pill pill--instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    @the.yolo.collective
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         FORM SECTION
+         ═══════════════════════════════════════════ -->
+    <main class="contact-main">
+        <div class="contact-wrapper">
+            <div class="section-tag animate-in">Drop us a message</div>
+
+            <div class="form-card animate-in">
+                <div class="form-card__header">
+                    <h2>What's on your mind?</h2>
+                    <p>Fill in the blanks, we'll do the rest.</p>
+                </div>
+
+                <!-- Progress bar -->
+                <div class="form-progress">
+                    <div class="form-progress__bar" id="prog-1"></div>
+                    <div class="form-progress__bar" id="prog-2"></div>
+                    <div class="form-progress__bar" id="prog-3"></div>
+                </div>
+
+                <form id="contact-form" novalidate>
+                    <div class="form-step" id="step-1">
+                        <div class="form-step__number">1</div>
+                        <div class="form-step__input-wrap">
+                            <label class="form-step__label" for="name">Your Name</label>
+                            <input type="text" id="name" placeholder="e.g. Arjun Sharma" required autocomplete="name" />
+                        </div>
+                    </div>
+
+                    <div class="form-step" id="step-2">
+                        <div class="form-step__number">2</div>
+                        <div class="form-step__input-wrap">
+                            <label class="form-step__label" for="phone">Phone Number</label>
+                            <input type="tel" id="phone" placeholder="e.g. +91 98765 43210" required autocomplete="tel" />
+                        </div>
+                    </div>
+
+                    <div class="form-step" id="step-3">
+                        <div class="form-step__number">3</div>
+                        <div class="form-step__input-wrap">
+                            <label class="form-step__label" for="message">Your Message</label>
+                            <textarea id="message" placeholder="Tell us what you're looking for..." required rows="3"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-submit-wrap">
+                        <button type="submit" class="form-submit">
+                            <span class="form-submit__text">Send it</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                        </button>
+                    </div>
+                </form>
+
+                <div class="form-success" id="form-success">
+                    <span class="form-success__emoji" aria-hidden="true">&#127881;</span>
+                    <h3>You're all set!</h3>
+                    <p>We got your message. Expect to hear from us real soon.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Confetti canvas for success -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>The YOLO Collective</h3>
+                    <p>Experience-led hospitality for the modern soul. Curated stays, homes, and adventures — designed for those who seek more than the ordinary.</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/theyolocollective" class="social-link" title="Instagram" target="_blank" rel="noopener noreferrer">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="#" class="social-link" title="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Destinations</h4>
+                    <a href="jispa.html" class="footer-link">Jispa</a>
+                    <a href="manali.html" class="footer-link">Manali</a>
+                    <a href="kasol.html" class="footer-link">Kasol</a>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Inside YOLO</h4>
+                    <a href="about.html" class="footer-link">About Us</a>
+                    <a href="work-with-us.html" class="footer-link">Work with Us</a>
+                    <a href="franchise.html" class="footer-link">Franchise</a>
+                    <a href="blog.html" class="footer-link">Blogs</a>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Support</h4>
+                    <a href="contact.html" class="footer-link">Contact Us</a>
+                    <a href="https://wa.me/917018591758" target="_blank" class="footer-link">WhatsApp</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 The YOLO Collective. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp FAB -->
+    <a href="https://wa.me/917018591758" class="whatsapp-fab" target="_blank" title="Chat with us">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" /></svg>
+    </a>
+
+    <!-- Booking Overlay -->
+    <div class="booking-backdrop" id="booking-backdrop"></div>
+    <div class="booking-overlay" id="booking-overlay" role="dialog" aria-modal="true" aria-label="Book your stay">
+        <div class="booking-overlay-header">
+            <h3>Book Your Stay</h3>
+            <button class="booking-close" id="booking-close" aria-label="Close">&times;</button>
+        </div>
+        <iframe src="" data-src="https://bookingengine.stayflexi.com/group-be/?groupId=28012" title="YOLO Booking Engine"></iframe>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        /* ── Typing effect ── */
+        const phrases = [
+            "We'd love to hear from you.",
+            "Planning a mountain trip? Let's chat.",
+            "Got questions? We've got answers.",
+            "Book a dome. Find your calm.",
+            "Partnerships? Collaborations? We're in."
+        ];
+        const typedEl = document.getElementById('typed-text');
+        let phraseIdx = 0, charIdx = 0, isDeleting = false;
+
+        function typeLoop() {
+            const current = phrases[phraseIdx];
+            if (!isDeleting) {
+                typedEl.textContent = current.substring(0, charIdx + 1);
+                charIdx++;
+                if (charIdx === current.length) {
+                    isDeleting = true;
+                    setTimeout(typeLoop, 2000);
+                    return;
+                }
+                setTimeout(typeLoop, 50 + Math.random() * 40);
+            } else {
+                typedEl.textContent = current.substring(0, charIdx - 1);
+                charIdx--;
+                if (charIdx === 0) {
+                    isDeleting = false;
+                    phraseIdx = (phraseIdx + 1) % phrases.length;
+                    setTimeout(typeLoop, 400);
+                    return;
+                }
+                setTimeout(typeLoop, 25);
+            }
+        }
+        setTimeout(typeLoop, 800);
+
+        /* ── Hero animations now handled by CSS ── */
+
+        /* ── Form progress tracking ── */
+        const fields = ['name', 'phone', 'message'];
+        fields.forEach((id, i) => {
+            const el = document.getElementById(id);
+            const step = document.getElementById(`step-${i + 1}`);
+            const bar = document.getElementById(`prog-${i + 1}`);
+
+            el.addEventListener('input', () => {
+                if (el.value.trim()) {
+                    step.classList.add('filled');
+                    bar.classList.add('active');
+                } else {
+                    step.classList.remove('filled');
+                    bar.classList.remove('active');
+                }
+            });
+        });
+
+        /* ── Interactive blob follow on hero ── */
+        const hero = document.querySelector('.contact-hero');
+        const blob3 = document.querySelector('.blob--3');
+        hero.addEventListener('mousemove', (e) => {
+            const rect = hero.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width - 0.5) * 60;
+            const y = ((e.clientY - rect.top) / rect.height - 0.5) * 60;
+            gsap.to(blob3, { x, y, duration: 1.2, ease: 'power2.out' });
+        });
+
+        /* ── Google Form submission ── */
+        // REPLACE these with your actual Google Form values:
+        const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse';
+        // entry.XXXXXXXXX = Name, entry.XXXXXXXXX = Phone, entry.XXXXXXXXX = Message
+
+        const contactForm = document.getElementById('contact-form');
+        const formSuccess = document.getElementById('form-success');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const message = document.getElementById('message').value.trim();
+            if (!name || !phone || !message) return;
+
+            const submitBtn = contactForm.querySelector('.form-submit');
+            submitBtn.classList.add('loading');
+
+            // Submit to Google Forms
+            const iframe = document.createElement('iframe');
+            iframe.name = 'hidden_iframe';
+            iframe.style.display = 'none';
+            document.body.appendChild(iframe);
+
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = GOOGLE_FORM_ACTION;
+            form.target = 'hidden_iframe';
+
+            const entries = {
+                'entry.1234567890': name,
+                'entry.0987654321': phone,
+                'entry.1122334455': message
+            };
+
+            Object.entries(entries).forEach(([key, value]) => {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = key;
+                input.value = value;
+                form.appendChild(input);
+            });
+
+            document.body.appendChild(form);
+            form.submit();
+
+            setTimeout(() => {
+                contactForm.style.display = 'none';
+                document.querySelector('.form-progress').style.display = 'none';
+                formSuccess.classList.add('active');
+                submitBtn.classList.remove('loading');
+                launchConfetti();
+                form.remove();
+                setTimeout(() => iframe.remove(), 5000);
+            }, 1000);
+        });
+
+        /* ── Confetti burst ── */
+        function launchConfetti() {
+            const canvas = document.getElementById('confetti-canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const colors = ['#74ACDF', '#fff', '#b8d4ec', '#4a8abf', '#ddd'];
+            const particles = [];
+
+            for (let i = 0; i < 120; i++) {
+                particles.push({
+                    x: canvas.width / 2,
+                    y: canvas.height / 2,
+                    vx: (Math.random() - 0.5) * 20,
+                    vy: (Math.random() - 0.5) * 20 - 5,
+                    w: Math.random() * 8 + 4,
+                    h: Math.random() * 6 + 2,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    rotation: Math.random() * 360,
+                    rotSpeed: (Math.random() - 0.5) * 15,
+                    gravity: 0.25 + Math.random() * 0.15,
+                    opacity: 1
+                });
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                let alive = false;
+
+                particles.forEach(p => {
+                    p.x += p.vx;
+                    p.vy += p.gravity;
+                    p.y += p.vy;
+                    p.rotation += p.rotSpeed;
+                    p.opacity -= 0.008;
+
+                    if (p.opacity > 0) {
+                        alive = true;
+                        ctx.save();
+                        ctx.translate(p.x, p.y);
+                        ctx.rotate((p.rotation * Math.PI) / 180);
+                        ctx.globalAlpha = Math.max(0, p.opacity);
+                        ctx.fillStyle = p.color;
+                        ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+                        ctx.restore();
+                    }
+                });
+
+                if (alive) requestAnimationFrame(animate);
+            }
+            animate();
+        }
+    });
+    </script>
+</body>
+
+</html>
