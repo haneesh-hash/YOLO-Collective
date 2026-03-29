@@ -935,15 +935,11 @@
             gsap.to(blob3, { x, y, duration: 1.2, ease: 'power2.out' });
         });
 
-        /* ── Google Form submission ── */
-        // REPLACE these with your actual Google Form values:
-        const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse';
-        // entry.XXXXXXXXX = Name, entry.XXXXXXXXX = Phone, entry.XXXXXXXXX = Message
-
+        /* ── Notion API submission via Vercel serverless ── */
         const contactForm = document.getElementById('contact-form');
         const formSuccess = document.getElementById('form-success');
 
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
             const name = document.getElementById('name').value.trim();
@@ -954,43 +950,25 @@
             const submitBtn = contactForm.querySelector('.form-submit');
             submitBtn.classList.add('loading');
 
-            // Submit to Google Forms
-            const iframe = document.createElement('iframe');
-            iframe.name = 'hidden_iframe';
-            iframe.style.display = 'none';
-            document.body.appendChild(iframe);
+            try {
+                const res = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, phone, message })
+                });
 
-            const form = document.createElement('form');
-            form.method = 'POST';
-            form.action = GOOGLE_FORM_ACTION;
-            form.target = 'hidden_iframe';
+                if (!res.ok) throw new Error('Server error');
 
-            const entries = {
-                'entry.1234567890': name,
-                'entry.0987654321': phone,
-                'entry.1122334455': message
-            };
-
-            Object.entries(entries).forEach(([key, value]) => {
-                const input = document.createElement('input');
-                input.type = 'hidden';
-                input.name = key;
-                input.value = value;
-                form.appendChild(input);
-            });
-
-            document.body.appendChild(form);
-            form.submit();
-
-            setTimeout(() => {
                 contactForm.style.display = 'none';
                 document.querySelector('.form-progress').style.display = 'none';
                 formSuccess.classList.add('active');
-                submitBtn.classList.remove('loading');
                 launchConfetti();
-                form.remove();
-                setTimeout(() => iframe.remove(), 5000);
-            }, 1000);
+            } catch (err) {
+                console.error(err);
+                submitBtn.textContent = 'Something went wrong. Try again.';
+            } finally {
+                submitBtn.classList.remove('loading');
+            }
         });
 
         /* ── Confetti burst ── */
