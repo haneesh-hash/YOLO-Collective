@@ -58,6 +58,7 @@
                         <li><a href="about.html">About</a></li>
                         <li><a href="franchise.html">Franchise</a></li>
                         <li><a href="work-with-us.html">Work With Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </li>
             </ul>
@@ -111,6 +112,7 @@
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="franchise.html">Franchise</a></li>
                     <li><a href="work-with-us.html">Work with us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </li>
             <li><a href="#" class="btn-primary" id="booking-trigger-mobile">Book Your Stay</a></li>
@@ -237,7 +239,7 @@
                 </div>
                 <div class="footer-links-group">
                     <h4>Support</h4>
-                    <a href="mailto:hello@theyolocollective.com" class="footer-link">Contact Us</a>
+                    <a href="contact.html" class="footer-link">Contact Us</a>
                     <a href="https://wa.me/917018591758" target="_blank" class="footer-link">WhatsApp</a>
                 </div>
                 <div class="footer-brand" style="text-align: right;">
@@ -307,17 +309,23 @@
                     <h3 style="font-family: var(--font-heading); text-transform: uppercase;">Apply Now</h3>
                     <p style="font-family: var(--font-body); margin-bottom: 2rem;">Send us your details and portfolio.
                     </p>
-                    <div class="form-group">
-                        <input type="text" id="name" placeholder=" " required>
-                        <label for="name">Full Name</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" placeholder=" " required>
-                        <label for="email">Email Address</label>
-                    </div>
-                    <button class="btn-step-next"
-                        style="width: 100%; border: 1px solid var(--black); margin-top: 1rem;">Submit
-                        Application</button>
+                    <form id="applyForm">
+                        <div class="form-group">
+                            <input type="text" id="apply-name" placeholder=" " required>
+                            <label for="apply-name">Full Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="apply-phone" placeholder=" " required>
+                            <label for="apply-phone">Phone Number</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="apply-message" placeholder=" " rows="3" required style="width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--black); font-family: var(--font-body); font-size: 1rem; padding: 0.5rem 0; resize: vertical; outline: none;"></textarea>
+                            <label for="apply-message">Message</label>
+                        </div>
+                        <button type="submit" class="btn-step-next"
+                            style="width: 100%; border: 1px solid var(--black); margin-top: 1rem;">Submit
+                            Application</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -418,6 +426,52 @@
                     closeBtn.addEventListener('click', () => {
                         detailOverlay.classList.remove('active');
                         document.body.style.overflow = '';
+                    });
+                }
+
+                // Pre-fill message with job title when a job is clicked
+                jobSlabs.forEach(slab => {
+                    slab.addEventListener('click', () => {
+                        const title = slab.querySelector('.slab-title').innerText.replace('\n', ' ').trim();
+                        const code = slab.querySelector('.slab-top-left').innerText.trim();
+                        const msgEl = document.getElementById('apply-message');
+                        if (msgEl) {
+                            msgEl.value = 'Applying for: ' + title + ' (' + code + ')\n\n';
+                        }
+                    });
+                });
+
+                // Handle apply form submission
+                const applyForm = document.getElementById('applyForm');
+                if (applyForm) {
+                    applyForm.addEventListener('submit', async (e) => {
+                        e.preventDefault();
+                        const name = document.getElementById('apply-name').value.trim();
+                        const phone = document.getElementById('apply-phone').value.trim();
+                        const message = document.getElementById('apply-message').value.trim();
+                        if (!name || !phone || !message) return;
+
+                        const submitBtn = applyForm.querySelector('button[type="submit"]');
+                        const originalText = submitBtn.textContent;
+                        submitBtn.textContent = 'Sending...';
+                        submitBtn.disabled = true;
+
+                        try {
+                            const res = await fetch('/api/contact', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ name, phone, message })
+                            });
+                            if (!res.ok) throw new Error('Server error');
+                            submitBtn.textContent = 'Application Sent!';
+                            submitBtn.style.background = '#74ACDF';
+                            submitBtn.style.color = '#000';
+                            applyForm.reset();
+                        } catch (err) {
+                            console.error(err);
+                            submitBtn.textContent = 'Something went wrong. Try again.';
+                            submitBtn.disabled = false;
+                        }
                     });
                 }
             });
