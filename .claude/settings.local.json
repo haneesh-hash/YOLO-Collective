@@ -15,7 +15,20 @@
       "Bash(perl -pi -e 's|assets/images/IMG_0303\\\\.webp|assets/images/IMG_3221.webp|g' social.html)",
       "Bash(perl -pi -e 's|assets/images/IMG_3224\\\\.webp|assets/images/IMG_3223.webp|g' social.html)",
       "Bash(unzip -o \"/Users/haneesh/yolowebsite26/assets/YOLO Outdoors - JISPA-20260227T124128Z-1-001.zip\" \"*.JPG\" \"*.jpg\" -d /tmp/jispa_extract)",
-      "Bash(python3 -:*)"
+      "Bash(python3 -:*)",
+      "Bash(for f:*)",
+      "Bash(do sed:*)",
+      "Bash(echo \"Footer updated: $f\")",
+      "Bash(done)",
+      "Bash(do)",
+      "Bash(sed -i '' 's|<a href=\"\"work-with-us.html\"\">Work With Us</a></li></ul></li>|<a href=\"\"work-with-us.html\"\">Work With Us</a></li><li><a href=\"\"contact.html\"\">Contact</a></li></ul></li>|' \"$f\")",
+      "Bash(echo \"Nav updated: $f\")",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(''''✅ Row created:'''', d.get\\(''''id''''\\)\\) if d.get\\(''''object''''\\)==''''page'''' else print\\(''''❌ Error:'''', d.get\\(''''message''''\\)\\)\")",
+      "Bash(curl -s -X POST \"https://yolowebsite26.vercel.app/api/contact\" -H \"Content-Type: application/json\" -d '{\"\"\"\"name\"\"\"\": \"\"\"\"Test\"\"\"\", \"\"\"\"phone\"\"\"\": \"\"\"\"+91 99999 00000\"\"\"\", \"\"\"\"message\"\"\"\": \"\"\"\"Live test\"\"\"\"}')",
+      "Bash(vercel ls:*)",
+      "Bash(git push:*)",
+      "Bash(git rm:*)",
+      "Bash(python3 -c \"import sys,json; d=json.loads\\(sys.stdin.read\\(\\)\\); print\\(''''SUCCESS'''' if d.get\\(''''id''''\\) else json.dumps\\(d, indent=2\\)[:500]\\)\")"
     ]
   }
 }
