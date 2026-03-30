@@ -951,12 +951,13 @@
             submitBtn.classList.add('loading');
 
             try {
-                await fetch('https://script.google.com/macros/s/AKfycbx8sC_FjqS-1tfUcn1uJm18C4PXg6Bvy0s96Vx_OZCmdM39yJsFHlfUjj56I6BLou73qQ/exec', {
+                const res = await fetch('/api/contact', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'text/plain' },
-                    body: JSON.stringify({ name, phone, message }),
-                    mode: 'no-cors'
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, phone, message })
                 });
+
+                if (!res.ok) throw new Error('Server error');
 
                 contactForm.style.display = 'none';
                 document.querySelector('.form-progress').style.display = 'none';
