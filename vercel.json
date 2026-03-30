@@ -1,7 +1,6 @@
 {
     "version": 2,
     "buildCommand": "",
-    "installCommand": "cd api && npm install",
     "outputDirectory": ".",
     "functions": {
         "api/contact.js": {
