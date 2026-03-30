@@ -5,3 +5,5 @@ dist/
 .env
 __pycache__/
 *.pyc
+server.js
+package-lock.json
