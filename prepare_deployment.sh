@@ -42,7 +42,6 @@ rsync -av --progress . "$DEPLOY_DIR" \
     --exclude "dist" \
     --exclude "Gemini.md" \
     --exclude "brandguidelines.md" \
-    --exclude "*.JPG" \
     --exclude "*.MOV"
 
 # Use minified CSS/JS in deploy

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOLO Social - Minimal Backlit Signs</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;800;900&display=swap');
+
+        /* Remove browser UI artifacts */
+        *,
+        *:focus,
+        *:active {
+            outline: none !important;
+            -webkit-tap-highlight-color: transparent !important;
+            user-select: none;
+        }
+
+        :root {
+            --skyblue: #74ACDF;
+            --black: #080808;
+            /* Deep rich black for signs */
+            --white: #ffffff;
+            --font-heading: 'Outfit', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 80px;
+            background: #1a1a1a;
+            /* Dark presentation background */
+            font-family: var(--font-heading);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 120px;
+        }
+
+        .header-text {
+            text-align: center;
+            color: white;
+            margin-bottom: -40px;
+        }
+
+        .header-text h1 {
+            font-weight: 800;
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .header-text p {
+            color: #888;
+            font-weight: 300;
+            margin-top: 10px;
+            font-size: 1.1rem;
+        }
+
+        .sign {
+            width: 1600px;
+            height: 700px;
+            position: relative;
+            box-sizing: border-box;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.8);
+            border-radius: 8px;
+            /* Slight hardware rounding */
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .board-title {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            font-size: 1.1rem;
+            color: #888;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .svg-defs {
+            display: none;
+        }
+
+        .logo-wrap {
+            width: 500px;
+        }
+
+        /* =========================================================
+           Style 1: The Monolith (Neon Edge)
+           Deep black, glowing blue edge, ultra-clean white logo.
+           ========================================================= */
+        .sign-1 {
+            background: var(--black);
+            border: 6px solid #74ACDF;
+            box-shadow: 0 0 50px rgba(116, 172, 223, 0.4) inset, 0 40px 80px rgba(0, 0, 0, 0.8);
+        }
+
+        .sign-1 .logo-wrap svg .river {
+            fill: var(--skyblue);
+        }
+
+        .sign-1 .logo-wrap svg .mountain {
+            fill: #222;
+        }
+
+        .sign-1 .logo-wrap svg .hiker,
+        .sign-1 .logo-wrap svg .yo,
+        .sign-1 .logo-wrap svg .o,
+        .sign-1 .logo-wrap svg .sub {
+            fill: var(--white);
+        }
+
+        .sign-1 .logo-wrap svg line.hiker {
+            stroke: var(--white);
+            stroke-width: 2px;
+        }
+
+        .sign-1 .meta {
+            position: absolute;
+            bottom: 50px;
+            font-size: 1.4rem;
+            letter-spacing: 20px;
+            color: rgba(255, 255, 255, 0.3);
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-right: -20px;
+            /* offset tracking */
+        }
+
+        /* =========================================================
+           Style 2: The Lightbox (Ultra White)
+           Acts as a brilliant white light source. Heavy black ink.
+           ========================================================= */
+        .sign-2 {
+            background: var(--white);
+            border: 4px solid #ddd;
+            box-shadow: 0 0 100px rgba(255, 255, 255, 0.1), 0 40px 80px rgba(0, 0, 0, 0.8);
+        }
+
+        .sign-2::after {
+            content: '';
+            position: absolute;
+            inset: 25px;
+            border: 6px solid var(--black);
+            pointer-events: none;
+        }
+
+        .sign-2 .logo-wrap {
+            width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .sign-2 .logo-wrap svg .river {
+            fill: var(--skyblue);
+        }
+
+        .sign-2 .logo-wrap svg .mountain {
+            fill: #e0e0e0;
+        }
+
+        .sign-2 .logo-wrap svg .hiker,
+        .sign-2 .logo-wrap svg .yo,
+        .sign-2 .logo-wrap svg .o,
+        .sign-2 .logo-wrap svg .sub {
+            fill: var(--black);
+        }
+
+        .sign-2 .logo-wrap svg line.hiker {
+            stroke: var(--black);
+            stroke-width: 2px;
+        }
+
+        .sign-2 .meta {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--black);
+            letter-spacing: 12px;
+            margin-right: -12px;
+        }
+
+        /* =========================================================
+           Style 3: The Horizon Cut
+           Bold 50/50 horizontal split. Maximum architectural impact.
+           ========================================================= */
+        .sign-3 {
+            background: linear-gradient(to bottom, var(--skyblue) 50%, #151515 50%);
+        }
+
+        .sign-3 .logo-wrap {
+            width: 550px;
+        }
+
+        .sign-3 .logo-wrap svg .river {
+            fill: var(--white);
+        }
+
+        .sign-3 .logo-wrap svg .mountain {
+            fill: rgba(0, 0, 0, 0.15);
+        }
+
+        .sign-3 .logo-wrap svg .hiker,
+        .sign-3 .logo-wrap svg .yo,
+        .sign-3 .logo-wrap svg .o,
+        .sign-3 .logo-wrap svg .sub {
+            fill: var(--white);
+        }
+
+        .sign-3 .logo-wrap svg line.hiker {
+            stroke: var(--white);
+            stroke-width: 2px;
+        }
+
+        .sign-3 .location {
+            position: absolute;
+            bottom: 40px;
+            right: 50px;
+            font-size: 1.4rem;
+            font-weight: 300;
+            letter-spacing: 8px;
+            color: var(--white);
+            opacity: 0.5;
+        }
+
+        /* =========================================================
+           Style 4: The Glow Pulse
+           All black with a piercing white/blue center glow.
+           ========================================================= */
+        .sign-4 {
+            background: #0f0f0f;
+            background-image: radial-gradient(circle at center, rgba(116, 172, 223, 0.5) 0%, rgba(116, 172, 223, 0.1) 30%, transparent 70%);
+        }
+
+        .sign-4 .logo-wrap {
+            width: 650px;
+        }
+
+        /* Solid white logo since the background provides the color */
+        .sign-4 .logo-wrap svg .river {
+            fill: var(--white);
+        }
+
+        .sign-4 .logo-wrap svg .mountain {
+            fill: transparent;
+        }
+
+        .sign-4 .logo-wrap svg .hiker,
+        .sign-4 .logo-wrap svg .yo,
+        .sign-4 .logo-wrap svg .o,
+        .sign-4 .logo-wrap svg .sub {
+            fill: var(--white);
+        }
+
+        .sign-4 .logo-wrap svg line.hiker {
+            stroke: var(--white);
+            stroke-width: 2px;
+        }
+
+        .sign-4 .meta-center {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: var(--skyblue);
+            letter-spacing: 25px;
+            font-weight: 600;
+            margin-right: -25px;
+        }
+
+        /* =========================================================
+           Style 5: The Brutalist Identity
+           Edge-to-edge Skyblue flush. Massive typography, stark black.
+           ========================================================= */
+        .sign-5 {
+            background: var(--skyblue);
+            justify-content: flex-start;
+            padding-left: 100px;
+            align-items: flex-start;
+        }
+
+        .sign-5::before {
+            content: 'SOCIAL';
+            position: absolute;
+            right: -40px;
+            bottom: -90px;
+            font-size: 35rem;
+            font-weight: 900;
+            color: rgba(0, 0, 0, 0.06);
+            line-height: 1;
+            pointer-events: none;
+            letter-spacing: -20px;
+        }
+
+        .sign-5::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 20px solid var(--black);
+            pointer-events: none;
+            border-radius: 8px;
+        }
+
+        .sign-5 .wrap-inner {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .sign-5 .logo-wrap {
+            width: 450px;
+            margin-bottom: 20px;
+        }
+
+        .sign-5 .logo-wrap svg .river {
+            fill: var(--white);
+        }
+
+        .sign-5 .logo-wrap svg .mountain {
+            fill: rgba(0, 0, 0, 0.2);
+        }
+
+        .sign-5 .logo-wrap svg .hiker,
+        .sign-5 .logo-wrap svg .yo,
+        .sign-5 .logo-wrap svg .o,
+        .sign-5 .logo-wrap svg .sub {
+            fill: var(--black);
+        }
+
+        .sign-5 .logo-wrap svg line.hiker {
+            stroke: var(--black);
+            stroke-width: 2px;
+        }
+
+        .sign-5 .meta-side {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--black);
+            letter-spacing: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header-text">
+        <h1>YOLO Social Signage</h1>
+        <p>5 Minimal, High-Contrast Designs for Backlit Digital Prints</p>
+    </div>
+
+    <!-- SVG Defines -->
+    <svg class="svg-defs" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <g id="social-logo-base">
+                <g transform="translate(80, 50)">
+                    <text class="yo" x="0" y="150" font-family="Arial, sans-serif" font-weight="900" font-size="140"
+                        letter-spacing="-5">YO</text>
+                    <g transform="translate(-40, 0)">
+                        <path class="river"
+                            d="M260,30 L300,30 L300,120 Q300,150 330,150 L370,150 L370,180 L330,180 Q270,180 260,120 Z"
+                            fill="var(--skyblue)" />
+                        <path class="mountain" d="M320,150 L370,60 L420,150" opacity="0.5" />
+                        <g transform="translate(320, 80) scale(0.9)">
+                            <circle class="hiker" cx="5" cy="0" r="6" />
+                            <path class="hiker" d="M0,8 L10,30 L-10,30 Z" />
+                            <line class="hiker" x1="8" y1="15" x2="20" y2="40" stroke-width="2" />
+                        </g>
+                    </g>
+                    <text class="o" x="340" y="150" font-family="Arial, sans-serif" font-weight="900"
+                        font-size="140">O</text>
+                    <text class="sub" x="220" y="240" font-family="Arial, sans-serif" font-weight="300" font-size="34"
+                        letter-spacing="8" text-anchor="middle">SOCIAL</text>
+                </g>
+            </g>
+        </defs>
+    </svg>
+
+    <!-- WRAPPER -->
+    <div
+        style="width: 100%; display: flex; flex-direction: column; align-items: center; gap: 120px; padding-bottom: 100px;">
+
+        <!-- Style 1 -->
+        <div style="position: relative;">
+            <div class="board-title">1. The Monolith (Neon Edge Context)</div>
+            <div class="sign sign-1" id="sign_1">
+                <div class="logo-wrap">
+                    <svg viewBox="0 0 600 300">
+                        <use href="#social-logo-base"></use>
+                    </svg>
+                </div>
+                <div class="meta">MANALI</div>
+            </div>
+        </div>
+
+        <!-- Style 2 -->
+        <div style="position: relative;">
+            <div class="board-title">2. The Lightbox (Ultra White Illumination)</div>
+            <div class="sign sign-2" id="sign_2">
+                <div class="logo-wrap">
+                    <svg viewBox="0 0 600 300">
+                        <use href="#social-logo-base"></use>
+                    </svg>
+                </div>
+                <div class="meta">STAY & COWORK</div>
+            </div>
+        </div>
+
+        <!-- Style 3 -->
+        <div style="position: relative;">
+            <div class="board-title">3. The Horizon Cut (Geometric Split)</div>
+            <div class="sign sign-3" id="sign_3">
+                <div class="logo-wrap">
+                    <svg viewBox="0 0 600 300">
+                        <use href="#social-logo-base"></use>
+                    </svg>
+                </div>
+                <div class="location">ELEV 2050M</div>
+            </div>
+        </div>
+
+        <!-- Style 4 -->
+        <div style="position: relative;">
+            <div class="board-title">4. The Glow Pulse (Centered Radiance)</div>
+            <div class="sign sign-4" id="sign_4">
+                <div class="logo-wrap">
+                    <svg viewBox="0 0 600 300">
+                        <use href="#social-logo-base"></use>
+                    </svg>
+                </div>
+                <!-- Purely graphic, no meta text for maximum minimalism -->
+                <div class="meta-center">EST. MANALI</div>
+            </div>
+        </div>
+
+        <!-- Style 5 -->
+        <div style="position: relative;">
+            <div class="board-title">5. The Brutalist Identity (Flush & Bordered)</div>
+            <div class="sign sign-5" id="sign_5">
+                <div class="wrap-inner">
+                    <div class="logo-wrap">
+                        <svg viewBox="0 0 600 300">
+                            <use href="#social-logo-base"></use>
+                        </svg>
+                    </div>
+                    <div class="meta-side">BOUTIQUE SOCIAL STAY</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
