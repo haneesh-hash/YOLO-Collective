@@ -4806,6 +4806,11 @@ a.mj-card.mj-card--link {
     border-top: 1px solid var(--gray-100);
 }
 
+.accordion-section > .container {
+    max-width: var(--container-max);
+    padding: 0 2rem;
+}
+
 .accordion-container {
     max-width: 800px;
     margin: 2rem auto 0 auto;
@@ -8037,6 +8042,10 @@ a.mj-card.mj-card--link {
     }
 
     /* Voices */
+    .pp-voices__header {
+        padding: 0 1.5rem;
+    }
+
     .pp-voices__card {
         flex: 0 0 300px;
         padding: 1.5rem;
@@ -8085,6 +8094,11 @@ a.mj-card.mj-card--link {
     .pp-booking-bar__cta {
         padding: 0.6rem 1.5rem;
         font-size: 0.8rem;
+    }
+
+    /* FAQ */
+    .accordion-section > .container {
+        padding: 0 1.5rem;
     }
 
     /* CTA */
@@ -8394,6 +8408,11 @@ a.mj-card.mj-card--link {
     .pp-booking-bar__cta {
         padding: 0.55rem 1.25rem;
         font-size: 0.75rem;
+    }
+
+    /* FAQ */
+    .accordion-section > .container {
+        padding: 0 1rem;
     }
 
     /* CTA */
