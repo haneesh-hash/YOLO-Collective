@@ -206,6 +206,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const bookingBar = document.querySelector('.pp-booking-bar__cta');
             if (bookingBar && bookingBar.href) {
                 window.open(bookingBar.href, '_blank', 'noopener,noreferrer');
+            } else {
+                window.open('https://bookingengine.stayflexi.com/group-be/?groupId=28012', '_blank', 'noopener,noreferrer');
             }
             return;
         }
