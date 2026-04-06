@@ -883,7 +883,7 @@ p {
     align-items: center;
     gap: 4px;
     color: rgba(255, 255, 255, 0.7);
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     transition: color var(--duration-fast);
@@ -1205,12 +1205,12 @@ p {
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.75);
     animation: scrollBounce 2s infinite;
 }
 
 .scroll-indicator span {
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
 }
@@ -1463,7 +1463,7 @@ p {
     }
 
     .brand-panel-content .label-text {
-        font-size: 0.6rem;
+        font-size: 0.75rem;
         margin-bottom: 0.25rem;
     }
 
@@ -1499,7 +1499,7 @@ p {
 }
 
 .section-dark p {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.75);
 }
 
 .section-light {
@@ -1837,7 +1837,7 @@ p {
 }
 
 .final-cta p {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.75);
     margin: 0 auto 2.5rem;
 }
 
@@ -2474,7 +2474,7 @@ p {
 }
 
 .mj-feature-card__tag {
-    font-size: 0.62rem;
+    font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -2591,7 +2591,7 @@ p {
 }
 
 .mj-cta-box .mj-body {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.75);
     margin: 0 auto 2rem;
 }
 
@@ -2774,11 +2774,11 @@ p {
 
 .dest-glance-bar__label {
     font-family: var(--font-heading);
-    font-size: 0.58rem;
+    font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.75);
 }
 
 @media (max-width: 768px) {
@@ -2880,7 +2880,7 @@ p {
     background: rgba(0, 0, 0, 0.72);
     color: #fff;
     font-family: var(--font-heading);
-    font-size: 0.6rem;
+    font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -2900,7 +2900,7 @@ p {
 
 .prop-showcase-card__label {
     font-family: var(--font-heading);
-    font-size: 0.62rem;
+    font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -3044,7 +3044,7 @@ p {
 
 .stay-pills__label {
     font-family: var(--font-heading);
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -3209,7 +3209,7 @@ p {
 }
 
 .mj-final-cta .mj-body {
-    color: rgba(255, 255, 255, 0.55);
+    color: rgba(255, 255, 255, 0.75);
     margin: 0 auto 2.5rem;
 }
 
@@ -3432,7 +3432,7 @@ p {
 .mj-eyebrow {
     display: block;
     font-family: var(--font-heading);
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.22em;
     text-transform: uppercase;
@@ -4772,7 +4772,7 @@ a.mj-card.mj-card--link {
 
 .nearby-tag {
     font-family: var(--font-heading);
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -5128,11 +5128,11 @@ a.mj-card.mj-card--link {
 
 .exp-stats-bar__label {
     font-family: var(--font-heading);
-    font-size: 0.62rem;
+    font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.75);
 }
 
 /* ── Experience Page: Filter Tabs ── */
@@ -5371,7 +5371,7 @@ a.mj-card.mj-card--link {
 .exp-fact:last-child { border-right: none; }
 
 .exp-fact__label {
-    font-size: 0.6rem;
+    font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -5583,7 +5583,7 @@ a.mj-card.mj-card--link {
 }
 
 .exp-best-time__label {
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -5826,7 +5826,7 @@ a.mj-card.mj-card--link {
 
 .pp-hero__tags span {
     font-family: var(--font-body);
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     font-weight: 400;
     letter-spacing: 0.09em;
     text-transform: uppercase;
@@ -5914,11 +5914,11 @@ a.mj-card.mj-card--link {
 
 .pp-glance__item-label {
     font-family: var(--font-body);
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     font-weight: 400;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(255, 255, 255, 0.75);
     margin-bottom: 0.2rem;
 }
 
@@ -6434,7 +6434,7 @@ a.mj-card.mj-card--link {
 .pp-day__time {
     display: inline-block;
     font-family: var(--font-body);
-    font-size: 0.62rem;
+    font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -6788,7 +6788,7 @@ a.mj-card.mj-card--link {
 .room-gallery__counter {
     font-family: var(--font-body);
     font-size: 0.82rem;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.75);
     font-weight: 400;
     letter-spacing: 0.04em;
 }
@@ -7581,7 +7581,7 @@ a.mj-card.mj-card--link {
 .pp-booking-bar__price {
     font-family: var(--font-body);
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.65);
+    color: rgba(255, 255, 255, 0.75);
     white-space: nowrap;
 }
 
@@ -7698,7 +7698,7 @@ a.mj-card.mj-card--link {
     font-weight: 300;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.75);
 }
 
 
@@ -7879,7 +7879,7 @@ a.mj-card.mj-card--link {
     }
 
     .pp-hero__badge p {
-        font-size: 0.65rem;
+        font-size: 0.75rem;
         letter-spacing: 0.08em;
     }
 
@@ -8148,7 +8148,7 @@ a.mj-card.mj-card--link {
     }
 
     .pp-glance__item-label {
-        font-size: 0.58rem;
+        font-size: 0.75rem;
     }
 
     .pp-glance__item-value {
@@ -8280,7 +8280,7 @@ a.mj-card.mj-card--link {
     }
 
     .pp-day__time {
-        font-size: 0.55rem;
+        font-size: 0.75rem;
         padding: 0.2rem 0.55rem;
     }
 
@@ -8760,9 +8760,9 @@ body.has-promo .site-header {
 
 .promo-bar__code-label {
     font-family: var(--font-body);
-    font-size: 0.6rem;
+    font-size: 0.75rem;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(255, 255, 255, 0.75);
     letter-spacing: 0.15em;
     text-transform: uppercase;
 }
@@ -8776,7 +8776,7 @@ body.has-promo .site-header {
 }
 
 .promo-bar__copy-icon {
-    color: rgba(255, 255, 255, 0.35);
+    color: rgba(255, 255, 255, 0.75);
     flex-shrink: 0;
     transition: color 0.2s;
 }
@@ -8823,7 +8823,7 @@ body.has-promo .site-header {
     transform: translateY(-50%);
     background: none;
     border: none;
-    color: rgba(255, 255, 255, 0.35);
+    color: rgba(255, 255, 255, 0.75);
     font-size: 1.2rem;
     cursor: pointer;
     padding: 4px 8px;
