@@ -2200,7 +2200,7 @@ p {
 
 .blog-card-meta {
     margin-bottom: 1rem;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     color: var(--gray-400);
     text-transform: uppercase;
     letter-spacing: 0.15em;
@@ -2444,7 +2444,7 @@ p {
 .glass-badge {
     font-family: var(--font-body);
     font-weight: 600;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: var(--skyblue);
@@ -2663,7 +2663,7 @@ p {
 
 .mj-glance__label {
     font-family: 'Inter', sans-serif;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 500;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -2722,7 +2722,7 @@ p {
     border-radius: 40px;
     color: #fff;
     font-family: var(--font-heading);
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -2970,7 +2970,7 @@ p {
     background: #000;
     color: #fff;
     font-family: var(--font-heading);
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -2994,7 +2994,7 @@ p {
 
 .prop-showcase-card__link {
     font-family: var(--font-heading);
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -3062,7 +3062,7 @@ p {
     background: transparent;
     color: var(--black);
     font-family: var(--font-heading);
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -5150,7 +5150,7 @@ a.mj-card.mj-card--link {
     border: none;
     padding: 0.55rem 1.1rem;
     font-family: var(--font-heading);
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -5216,7 +5216,7 @@ a.mj-card.mj-card--link {
     justify-content: space-between;
     padding: 0.6rem 1rem;
     background: linear-gradient(transparent, rgba(0,0,0,0.7));
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -5233,7 +5233,7 @@ a.mj-card.mj-card--link {
 }
 
 .mj-card__season {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -5413,7 +5413,7 @@ a.mj-card.mj-card--link {
 
 .exp-day__num {
     font-family: var(--font-heading);
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 800;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -5511,7 +5511,7 @@ a.mj-card.mj-card--link {
 
 .exp-packing__group-title {
     font-family: var(--font-heading);
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     font-weight: 800;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -5551,7 +5551,7 @@ a.mj-card.mj-card--link {
     align-items: center;
     justify-content: center;
     transition: all 0.2s;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     color: transparent;
 }
 
@@ -5850,7 +5850,7 @@ a.mj-card.mj-card--link {
     gap: 0.5rem;
     color: rgba(255, 255, 255, 0.7);
     font-family: var(--font-body);
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 400;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -6268,7 +6268,7 @@ a.mj-card.mj-card--link {
 .pp-timeline__time {
     display: inline-block;
     font-family: var(--font-body);
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -6691,7 +6691,7 @@ a.mj-card.mj-card--link {
     -webkit-backdrop-filter: blur(8px);
     color: #fff;
     font-family: var(--font-body);
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     font-weight: 500;
     padding: 0.35rem 0.65rem;
     border-radius: 4px;
@@ -6717,7 +6717,7 @@ a.mj-card.mj-card--link {
 /* ── Room Card Unit Count ── */
 .pp-rooms__card-units {
     font-family: var(--font-body);
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     font-weight: 500;
     color: var(--skyblue-dark);
     background: rgba(116, 172, 223, 0.1);
@@ -7085,7 +7085,7 @@ a.mj-card.mj-card--link {
 /* Checkmark on hover — pseudo-element */
 .pp-amenities__pill::after {
     content: '\2713';
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     color: var(--skyblue);
     opacity: 0;
     transform: scale(0.5);
@@ -7515,7 +7515,7 @@ a.mj-card.mj-card--link {
 
 .pp-location__fact-label {
     font-family: var(--font-body);
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     font-weight: 400;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -8175,7 +8175,7 @@ a.mj-card.mj-card--link {
     }
 
     .pp-story__vibe {
-        font-size: 0.72rem;
+        font-size: 0.75rem;
         padding: 0.4rem 1rem;
     }
 
@@ -8275,7 +8275,7 @@ a.mj-card.mj-card--link {
     }
 
     .pp-day__desc {
-        font-size: 0.7rem;
+        font-size: 0.75rem;
         line-height: 1.45;
     }
 
@@ -8306,7 +8306,7 @@ a.mj-card.mj-card--link {
     }
 
     .pp-amenities__card-name {
-        font-size: 0.7rem;
+        font-size: 0.75rem;
     }
 
     /* Rooms */
@@ -8338,7 +8338,7 @@ a.mj-card.mj-card--link {
 
     .pp-amenities__pill {
         padding: 0.4rem 0.75rem;
-        font-size: 0.72rem;
+        font-size: 0.75rem;
     }
 
     .pp-amenities__group-title {
@@ -8393,7 +8393,7 @@ a.mj-card.mj-card--link {
     }
 
     .pp-counter__label {
-        font-size: 0.7rem;
+        font-size: 0.75rem;
     }
 
     /* Booking bar */
@@ -8793,7 +8793,7 @@ body.has-promo .site-header {
     background: var(--skyblue);
     color: var(--black);
     font-family: var(--font-heading);
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
