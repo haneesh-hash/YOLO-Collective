@@ -28,7 +28,14 @@
       "Bash(vercel ls:*)",
       "Bash(git push:*)",
       "Bash(git rm:*)",
-      "Bash(python3 -c \"import sys,json; d=json.loads\\(sys.stdin.read\\(\\)\\); print\\(''''SUCCESS'''' if d.get\\(''''id''''\\) else json.dumps\\(d, indent=2\\)[:500]\\)\")"
+      "Bash(python3 -c \"import sys,json; d=json.loads\\(sys.stdin.read\\(\\)\\); print\\(''''SUCCESS'''' if d.get\\(''''id''''\\) else json.dumps\\(d, indent=2\\)[:500]\\)\")",
+      "Bash(sort -t'.' -k1 -n)",
+      "Bash(git -C /Users/haneesh/yolowebsite26/.claude/worktrees/modest-taussig log --oneline -4)",
+      "Bash(shuf -n 3)",
+      "Bash(awk 'NR==1||NR==10||NR==20')",
+      "Bash(git -C /Users/haneesh/yolowebsite26/.claude/worktrees/modest-taussig status)",
+      "Bash(git -C /Users/haneesh/yolowebsite26/.claude/worktrees/modest-taussig log --oneline 7c8a682..HEAD)",
+      "Bash(git -C /Users/haneesh/yolowebsite26/.claude/worktrees/modest-taussig diff index.html)"
     ]
   }
 }

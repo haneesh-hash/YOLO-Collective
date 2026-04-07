@@ -7,6 +7,13 @@
       "runtimeArgs": ["server.js"],
       "port": 3001,
       "autoPort": false
+    },
+    {
+      "name": "yolo-worktree",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "3002", "--directory", "/Users/haneesh/yolowebsite26/.claude/worktrees/modest-taussig"],
+      "port": 3002,
+      "autoPort": false
     }
   ]
 }
