@@ -6480,7 +6480,129 @@ a.mj-card.mj-card--link {
 
 
 /* ═══════════════════════════════════════════════════
-   5b. "A DAY HERE" HORIZONTAL CARDS  (pp-day)
+   5b. MENU SECTION  (pp-menu)
+   ═══════════════════════════════════════════════════ */
+
+.pp-menu {
+    padding: var(--section-padding) 0;
+    background: var(--bg-secondary);
+}
+
+.pp-menu__inner {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.pp-menu__header {
+    margin-bottom: 3rem;
+}
+
+.pp-menu__header h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 600;
+    letter-spacing: var(--tracking-tight);
+    color: var(--heading-color);
+    margin-bottom: 0.75rem;
+}
+
+.pp-menu__header p {
+    font-family: var(--font-body);
+    font-size: var(--text-md);
+    color: var(--gray-500);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.pp-menu__highlights {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+}
+
+.pp-menu__card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pp-menu__card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.pp-menu__card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(116, 172, 223, 0.1);
+    color: var(--skyblue);
+    margin-bottom: 1rem;
+}
+
+.pp-menu__card h3 {
+    font-family: var(--font-heading);
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--heading-color);
+    margin-bottom: 0.5rem;
+}
+
+.pp-menu__card p {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--gray-500);
+    line-height: 1.55;
+}
+
+.pp-menu__cta {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--white);
+    background: var(--skyblue);
+    padding: 0.85rem 2.25rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.pp-menu__cta:hover {
+    background: var(--skyblue-dark);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 900px) {
+    .pp-menu__highlights {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 540px) {
+    .pp-menu__highlights {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .pp-menu__card {
+        padding: 1.5rem 1.25rem;
+    }
+}
+
+
+/* ═══════════════════════════════════════════════════
+   5c. "A DAY HERE" HORIZONTAL CARDS  (pp-day)
    ═══════════════════════════════════════════════════ */
 
 .pp-day {
