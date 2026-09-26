@@ -807,27 +807,78 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ═══════════════════════════════════════════════════
-   CONTACT CLICK TRACKING — WhatsApp + phone as GA4 events
+   CONVERSION TRACKING — GA4 events for every lead/booking action
    Delegated on document so dynamically injected links
    (contact popup, floating buttons) are covered too.
+   Events: booking_click, whatsapp_click, phone_click,
+   contact_popup_open, social_click (+ form events via yoloTrack)
    ═══════════════════════════════════════════════════ */
 (function () {
-    document.addEventListener('click', function (e) {
+    const PAGE_PROPERTY = {
+        'outdoors': 'Outdoors Jispa',
+        'jispamenu': 'Outdoors Jispa',
+        'social': 'Social Manali',
+        'homes': 'Homes Kasol',
+        'homes-manali': 'Homes Manali',
+        'homes-hub': 'Homes',
+        'jispa': 'Jispa',
+        'kasol': 'Kasol',
+        'manali': 'Manali'
+    };
+
+    function pageProperty() {
+        const slug = window.location.pathname.split('/').pop().replace('.html', '') || 'index';
+        if (PAGE_PROPERTY[slug]) return PAGE_PROPERTY[slug];
+        if (slug.startsWith('experience-')) return 'Experience: ' + slug.slice(11);
+        return 'General';
+    }
+
+    function ctaLocation(el) {
+        if (el.closest('.ycp-sheet')) return 'contact_popup';
+        if (el.closest('.mobile-bottom-nav')) return 'mobile_bottom_nav';
+        if (el.closest('.mobile-nav-drawer')) return 'mobile_menu';
+        if (el.closest('.site-header')) return 'header';
+        if (el.closest('.site-footer')) return 'footer';
+        if (el.closest('.pp-booking-bar')) return 'booking_bar';
+        if (el.classList.contains('whatsapp-fab')) return 'floating_button';
+        return 'page';
+    }
+
+    function track(eventName, params) {
         if (typeof window.gtag !== 'function') return;
-        const link = e.target.closest && e.target.closest('a[href]');
-        if (!link) return;
-        const href = link.getAttribute('href') || '';
-
-        let eventName = null;
-        if (href.includes('wa.me') || href.includes('api.whatsapp.com')) eventName = 'whatsapp_click';
-        else if (href.startsWith('tel:')) eventName = 'phone_click';
-        if (!eventName) return;
-
-        window.gtag('event', eventName, {
-            link_url: href.split('?')[0],
-            link_text: (link.textContent || '').trim().slice(0, 60),
+        window.gtag('event', eventName, Object.assign({
+            property: pageProperty(),
             page_path: window.location.pathname,
             transport_type: 'beacon'
-        });
+        }, params));
+    }
+    window.yoloTrack = track;
+
+    const BOOKING_TRIGGER = '#booking-trigger, #booking-trigger-mobile, #booking-trigger-bottom, #final-booking-trigger';
+
+    document.addEventListener('click', function (e) {
+        if (!e.target.closest) return;
+        const el = e.target.closest('a[href], .open-contact-popup, ' + BOOKING_TRIGGER);
+        if (!el) return;
+        const href = el.getAttribute('href') || '';
+
+        let eventName = null;
+        const extra = {};
+        if (el.matches(BOOKING_TRIGGER) || href.includes('stayflexi.com')) eventName = 'booking_click';
+        else if (href.includes('wa.me') || href.includes('api.whatsapp.com')) eventName = 'whatsapp_click';
+        else if (href.startsWith('tel:')) eventName = 'phone_click';
+        else if (el.classList.contains('open-contact-popup')) eventName = 'contact_popup_open';
+        else {
+            const social = href.match(/(instagram|youtube|facebook)\.com/);
+            if (social) { eventName = 'social_click'; extra.network = social[1]; }
+        }
+        if (!eventName) return;
+
+        const text = (el.textContent || '').trim().replace(/\s+/g, ' ') || el.getAttribute('aria-label') || el.title || '';
+        track(eventName, Object.assign({
+            link_url: href.split('?')[0],
+            link_text: text.slice(0, 60),
+            cta_location: ctaLocation(el)
+        }, extra));
     }, true);
 })();

@@ -465,6 +465,7 @@
                                 body: JSON.stringify({ name, phone, message })
                             });
                             if (!res.ok) throw new Error('Server error');
+                            if (window.yoloTrack) window.yoloTrack('job_application_submit', { form_id: 'applyForm' });
                             submitBtn.textContent = 'Application Sent!';
                             submitBtn.style.background = '#74ACDF';
                             submitBtn.style.color = '#000';
@@ -479,7 +480,7 @@
             });
         </script>
 
-        <script src="script.js?v=4"></script>
+        <script src="script.js?v=5"></script>
 </body>
 
 </html>

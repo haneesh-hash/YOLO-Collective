@@ -878,7 +878,7 @@
         <iframe src="" data-src="https://bookingengine.stayflexi.com/group-be/?groupId=28012" title="YOLO Booking Engine"></iframe>
     </div>
 
-    <script src="script.js?v=4"></script>
+    <script src="script.js?v=5"></script>
 
     <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -976,6 +976,7 @@
                 contactForm.style.display = 'none';
                 document.querySelector('.form-progress').style.display = 'none';
                 formSuccess.classList.add('active');
+                if (window.yoloTrack) window.yoloTrack('contact_form_submit', { form_id: 'contact-form' });
                 launchConfetti();
             } catch (err) {
                 console.error(err);
