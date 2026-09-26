@@ -805,3 +805,29 @@ document.addEventListener('DOMContentLoaded', () => {
         promoBar.style.display = 'none';
     }
 });
+
+/* ═══════════════════════════════════════════════════
+   CONTACT CLICK TRACKING — WhatsApp + phone as GA4 events
+   Delegated on document so dynamically injected links
+   (contact popup, floating buttons) are covered too.
+   ═══════════════════════════════════════════════════ */
+(function () {
+    document.addEventListener('click', function (e) {
+        if (typeof window.gtag !== 'function') return;
+        const link = e.target.closest && e.target.closest('a[href]');
+        if (!link) return;
+        const href = link.getAttribute('href') || '';
+
+        let eventName = null;
+        if (href.includes('wa.me') || href.includes('api.whatsapp.com')) eventName = 'whatsapp_click';
+        else if (href.startsWith('tel:')) eventName = 'phone_click';
+        if (!eventName) return;
+
+        window.gtag('event', eventName, {
+            link_url: href.split('?')[0],
+            link_text: (link.textContent || '').trim().slice(0, 60),
+            page_path: window.location.pathname,
+            transport_type: 'beacon'
+        });
+    }, true);
+})();

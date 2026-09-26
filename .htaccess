@@ -1,0 +1,10 @@
+# Canonical host: www -> https://theyolocollective.com (http->https is handled by Hostinger's CDN)
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.theyolocollective\.com$ [NC]
+RewriteRule ^(.*)$ https://theyolocollective.com/$1 [R=301,L]
+
+# Hide development files that are deployed alongside the site
+RedirectMatch 404 ^/\.(claude|vscode)(/|$)
+<FilesMatch "(\.(py|md|sh)|^package(-lock)?\.json|^\.gitignore|^\.prettierrc|^\.vercelignore)$">
+    Require all denied
+</FilesMatch>
